@@ -67,7 +67,6 @@
 18. api记录cookie值 res.cookie('', {}, [options]);设置expires并JSON.stringify()转成字符串格式
 	page拿到cookie值 req.cookies();	JSON.parse()解析成对象
 	写一个函数：检测是否登录 没有登录cookie就自动跳转登录页 重定向
-19. 
 
 
 
