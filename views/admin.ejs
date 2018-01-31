@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- <meta name="viewport" content="device-width=width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0"> -->
+	<title><%= title%></title>
+	<link rel="stylesheet" type="text/css" href="./sass/common.css">
+	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<div id="admin">
+		<div>
+			<input type="text" id="mapNum">
+			<input type="button" value="创建地图" id="mapBtn">
+		</div>
+	</div>
+	<script type="text/javascript">
+		$('#mapBtn').on('click', function(){
+			var val = $('#mapNum').val().trim();	//trim()去掉空格
+			$.ajax({
+				url: 'api/createMap',
+				data: {
+					count: val
+				},
+				type: 'POST',
+				dataType: 'json',	//数据类型json格式
+				success: function(data){
+					if(data.code === '0'){
+						alert("创建地图成功");
+						window.location.reload();	//重新加载页面
+					}
+				},
+				error: function(){}
+			});
+		})
+	</script>
+</body>
+</html>

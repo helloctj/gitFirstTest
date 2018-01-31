@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+	<title><%= title%></title>
+	<link rel="stylesheet" type="text/css" href="./sass/common.css">
+</head>
+<body>
+	<div id="main">
+		<% if(userInfo && userInfo._id){ %>
+		<!-- 没有cookie就不执行，有cookie就找到对应项 -->
+			<div id="play"><a href="./play"></a></div>
+			<div id="info"><a href="./info"></a></div>
+		<% }else{ %>
+			<div id="login"><a href="./login"></a></div>
+			<div id="reg"><a href="./reg"></a></div>
+		<% } %>
+	</div>
+</body>
+</html>

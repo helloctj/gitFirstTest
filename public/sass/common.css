@@ -1,0 +1,155 @@
+/*************************common style***************************/
+* {
+  padding: 0;
+  margin: 0; }
+
+ul, li {
+  list-style: none; }
+
+input, button {
+  outline: none;
+  border: 0; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  color: #3e3e3e; }
+
+/****************************index.ejs*****************************/
+#main {
+  width: 100%;
+  height: 100%;
+  background: url(../images/index_bg.png) no-repeat center;
+  background-size: cover;
+  position: relative; }
+  #main #login, #main #reg {
+    width: 200px;
+    height: 48px;
+    position: absolute;
+    background: no-repeat center;
+    background-size: cover;
+    left: 50%;
+    margin-left: -100px; }
+    #main #login a, #main #reg a {
+      display: block;
+      width: 100%;
+      height: 100%; }
+  #main #login {
+    background-image: url(../images/index_login.png);
+    bottom: 120px; }
+  #main #reg {
+    background-image: url(../images/index_reg.png);
+    bottom: 50px; }
+  #main #play, #main #info {
+    width: 200px;
+    height: 48px;
+    position: absolute;
+    background: no-repeat center;
+    background-size: cover;
+    left: 50%;
+    margin-left: -100px; }
+    #main #play a, #main #info a {
+      display: block;
+      width: 100%;
+      height: 100%; }
+  #main #play {
+    background-image: url(../images/index_play.png);
+    bottom: 120px; }
+  #main #info {
+    background-image: url(../images/index_info.png);
+    bottom: 50px; }
+
+/****************************login.ejs&reg.ejs*****************************/
+#reg-main {
+  background: #ffc; }
+  #reg-main div:last-child input {
+    background: #ff9; }
+
+#login-main {
+  background: #fcc; }
+  #login-main div:last-child input {
+    background: #f99; }
+
+#login-main, #reg-main {
+  width: 100%;
+  height: 100%;
+  position: relative; }
+  #login-main section, #reg-main section {
+    width: 80%;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px; }
+    #login-main section div, #reg-main section div {
+      overflow: hidden; }
+      #login-main section div span, #reg-main section div span {
+        display: block;
+        width: 90px;
+        float: left;
+        height: 40px;
+        line-height: 40px;
+        margin: 10px 0;
+        text-align: right; }
+      #login-main section div input, #reg-main section div input {
+        width: 180px;
+        float: right;
+        padding: 0 10px;
+        height: 40px;
+        line-height: 40px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        background: #cff; }
+    #login-main section div:last-child input, #reg-main section div:last-child input {
+      float: none;
+      width: 120px;
+      height: 50px;
+      border: 0;
+      border-radius: 50px;
+      font-size: 16px;
+      text-align: center;
+      margin: 50px 90px; }
+
+/****************************play.ejs*****************************/
+#play-main {
+  width: 100%;
+  height: 100%;
+  background: url(../images/play_bg.jpg) no-repeat center;
+  background-size: cover;
+  position: relative; }
+  #play-main #map {
+    padding: 0 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+    position: relative;
+    top: 50px; }
+    #play-main #map li {
+      width: 50px;
+      height: 50px;
+      background: no-repeat center;
+      background-size: cover;
+      position: absolute; }
+    #play-main #map .no-see {
+      background-image: url(../images/play_noSel.png); }
+    #play-main #map .see {
+      background-image: url(../images/play_sel.png); }
+
+/****************************admin.ejs*****************************/
+#admin div #mapNum {
+  border: 1px solid #ccc;
+  width: 200px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px; }
+#admin div #mapBtn {
+  text-align: center;
+  background: #ccf;
+  height: 30px;
+  line-height: 30px;
+  width: 100px;
+  margin-left: 10px; }
+
+/*# sourceMappingURL=common.css.map */

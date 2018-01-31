@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+	<title><%= title%></title>
+	<link rel="stylesheet" type="text/css" href="./sass/common.css">
+	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<div id="play-main">		
+		<ul id="map">
+			<% list.forEach((item) => { %>
+				<% if(item.isCheck){ %>
+				<!-- 开过的宝箱 -->
+					<li class="see" data-id="<%= item._id %>"></li>
+				<% }else{ %>
+					<li class="no-see" data-id="<%= item._id %>"></li>
+				<% } %>
+			<% }) %>
+
+			<!-- data-* h5中自定义属性 
+				dataset.data-self_id 获取自定义属性的方法-->
+
+			<!-- <li class="no-see"></li>
+			<li class="no-see"></li>
+			<li class="no-see"></li>
+			<li class="no-see"></li>
+			<li class="no-see"></li>
+			<li class="no-see"></li>
+			<li class="no-see"></li>
+			<li class="no-see"></li>
+			<li class="no-see"></li>
+			<li class="no-see"></li>
+			<li class="no-see"></li>
+			<li class="no-see"></li>
+			<li class="no-see"></li>
+			<li class="no-see"></li>
+			<li class="no-see"></li>
+			<li class="no-see"></li>
+			<li class="no-see"></li>
+			<li class="no-see"></li>
+			<li class="no-see"></li>
+			<li class="no-see"></li> -->
+		</ul>
+	</div>
+	<script type="text/javascript">
+		posMap();
+		//对地图进行适配
+		function posMap(){
+			var n = 5;
+			var w = 50, h = 50;
+			var viewW = $(window).width();
+			var viewH = $(window).height();
+			var distX = (viewW - n*w)/(n+1);	//li之间横向间距
+			var $li = $('#map').find('li');
+			$('li').each((i, elem) => {
+				var x = i % n;	//x 0 1 2 3 4 0 1 2 3 4 ...
+				var y = Math.floor(i / n);	//y 0 0 0 0 0 1 1 1 1 1 ...
+				$(elem).css({
+					left: x * (w + distX) + distX,
+					top: y * (h + distX) + 0
+				});
+			})
+		}
+
+		//touchstart();触摸屏
+		
+		winning();
+		//中奖函数
+		function winning(){
+			$('#map').on('touchstart', '.no-see', function(){
+				var _id = this.dataset.id;
+				//事件代理/事件委托好处：
+				//1. 动态获取
+				//2. 提高性能
+				$.ajax({
+					url: 'api/winning',
+					type: 'GET',
+					data: {
+						_id: _id
+					},
+					dataType: 'json',
+					success: function(data){
+
+					},
+					error: function(){}
+				});
+			})
+		}
+
+	</script>
+</body>
+</html>

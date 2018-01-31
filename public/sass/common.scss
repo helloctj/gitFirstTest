@@ -1,0 +1,196 @@
+/*************************common style***************************/
+*{
+	padding: 0;
+	margin: 0;
+	// box-sizing: border-box;
+}
+ul, li{
+	list-style: none;
+}
+input, button{
+	outline: none;
+	border: 0;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	color: #3e3e3e;
+	// position: relative;
+	// font: 12px/1.5 "微软雅黑";
+}
+
+/****************************index.ejs*****************************/
+#main{
+	width: 100%;
+	height: 100%;
+	background: url(../images/index_bg.png) no-repeat center;
+	background-size: cover;
+	position: relative;
+	#login, #reg{
+		width: 200px;
+		height: 48px;
+		position: absolute;
+		background: no-repeat center;
+		background-size: cover;
+		left: 50%;
+		margin-left: -100px;
+		a{
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	#login{
+		background-image: url(../images/index_login.png);
+		bottom: 120px;
+	}
+	#reg{
+		background-image: url(../images/index_reg.png);
+		bottom: 50px;
+	}
+	#play, #info{
+		width: 200px;
+		height: 48px;
+		position: absolute;
+		background: no-repeat center;
+		background-size: cover;
+		left: 50%;
+		margin-left: -100px;
+		a{
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	#play{
+		background-image: url(../images/index_play.png);
+		bottom: 120px;
+	}
+	#info{
+		background-image: url(../images/index_info.png);
+		bottom: 50px;
+	}
+}
+
+/****************************login.ejs&reg.ejs*****************************/
+#reg-main{
+	background: #ffc;
+	div:last-child input{
+		background: #ff9;
+	}
+}
+#login-main{
+	background: #fcc;
+	div:last-child input{
+		background: #f99;
+	}
+}
+#login-main, #reg-main{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	section{
+		width: 80%;
+		height: 300px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		font-size: 16px;
+		div{
+			overflow: hidden;
+			span{
+				display: block;
+				width: 90px;
+				float: left;
+				height: 40px;
+				line-height: 40px;
+				margin: 10px 0;
+				text-align: right;
+			}	
+			input{
+				width: 180px;
+				float: right;
+				padding: 0 10px;
+				height: 40px;
+				line-height: 40px;
+				margin: 10px 0;
+				border: 1px solid #ccc;
+				background: #cff;
+			}
+		}
+		div:last-child input{
+			float: none;
+			width: 120px;
+			height: 50px;
+			border: 0;
+			border-radius: 50px;
+			font-size: 16px;
+			text-align: center;
+			margin: 50px 90px;
+		}
+	}
+}
+
+/****************************play.ejs*****************************/
+#play-main{
+	width: 100%;
+	height: 100%;
+	background: url(../images/play_bg.jpg) no-repeat center;
+	background-size: cover;
+	position: relative;
+	#map{
+		padding: 0 25px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-content: center;
+		position: relative;
+		top: 50px;
+		li{
+			width: 50px;
+			height: 50px;
+			background: no-repeat center;
+			background-size: cover;
+			position: absolute;
+		}
+		.no-see{
+			background-image: url(../images/play_noSel.png);
+		}
+		.see{
+			background-image: url(../images/play_sel.png);
+		}
+	}
+}
+
+/****************************admin.ejs*****************************/
+#admin{
+	div{
+		#mapNum{
+			border: 1px solid #ccc;
+			width: 200px;
+			height: 30px;
+			line-height: 30px;
+			padding: 0 10px;
+		}
+		#mapBtn{
+			text-align: center;
+			background: #ccf;
+			height: 30px;
+			line-height: 30px;
+			width: 100px;
+			margin-left: 10px;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
